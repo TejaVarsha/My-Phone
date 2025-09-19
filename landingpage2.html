@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galaxy X25 — Experience the Future</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#98a0b3;
+      --accent1:#ff6b6b;
+      --accent2:#7c5cff;
+      --glass: rgba(255,255,255,0.04);
+      --max-width:1100px;
+      font-family: Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(160deg,#07102a 0%, #081726 40%, #07102a 100%);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px 18px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap:24px;
+    }
+    .container{width:100%;max-width:var(--max-width)}
+
+    /* Header / Hero */
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:700}
+    .brand h1{font-size:18px;margin:0}
+    nav{display:flex;gap:16px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-size:14px}
+    nav a.cta{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:8px 14px;border-radius:10px;color:white;font-weight:600}
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:center;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:28px;border-radius:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6);
+    }
+    .hero-left{padding-right:6px}
+    .eyebrow{color:var(--accent2);font-weight:700;font-size:13px;margin-bottom:12px}
+    .headline{font-size:34px;line-height:1.02;margin:0 0 14px}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .kpis{display:flex;gap:18px;margin-bottom:20px}
+    .kpi{background:var(--glass);padding:10px 12px;border-radius:12px;text-align:center}
+    .kpi strong{display:block;font-size:18px}
+
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent2)}
+
+    .hero-right{display:grid;place-items:center}
+    .phone-card{width:320px;border-radius:24px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(12,18,44,0.6);}
+    .phone-img{width:100%;height:520px;background:url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=1b8f1b3f2f8d0b3f3b9c3f2a9e1b4f4c') center/cover;border-radius:14px}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+    .feature{background:linear-gradient(90deg, rgba(255,255,255,0.015), transparent);padding:16px;border-radius:12px;display:flex;gap:12px;align-items:flex-start}
+    .icon{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:700}
+    .feature h4{margin:0 0 6px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Testimonials */
+    .testimonials{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .card{background:var(--card);padding:16px;border-radius:12px}
+    .testimonial p{color:var(--muted);margin:8px 0 0}
+
+    /* Pricing */
+    .pricing{display:flex;gap:18px;margin-top:22px;flex-wrap:wrap}
+    .price-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;width:260px}
+    .price{font-size:28px;font-weight:800}
+    .small{color:var(--muted);font-size:14px}
+
+    footer{margin-top:28px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .socials{display:flex;gap:10px}
+    .socials a{display:inline-block;width:36px;height:36px;border-radius:9px;background:var(--glass);display:grid;place-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .hero-right{order:-1}
+      .phone-img{height:420px}
+      .features{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+    }
+    @media (max-width:480px){
+      .headline{font-size:22px}
+      .kpi{padding:8px}
+      .phone-img{height:320px}
+      .price-card{width:100%}
+    }
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">GX</div>
+        <div>
+          <h1 style="margin:0;font-size:16px">Galaxy X25</h1>
+          <div class="muted" style="font-size:12px">Experience the Future</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <a class="cta" href="#purchase">Pre-order</a>
+      </nav>
+    </header>
+
+    <section class="hero" role="region" aria-label="Hero section">
+      <div class="hero-left">
+        <div class="eyebrow">New — Limited Pre-order</div>
+        <h2 class="headline">Experience the Future with Galaxy X25</h2>
+        <p class="lead">A flagship mobile engineered for creators: ultra clarity camera, all-day battery, and buttery performance packed in a feather-light body.</p>
+
+        <div class="kpis" aria-hidden="true">
+          <div class="kpi"><strong>200 MP</strong><span class="muted">Pro Camera</span></div>
+          <div class="kpi"><strong>72 hr</strong><span class="muted">Battery Life</span></div>
+          <div class="kpi"><strong>12 GB</strong><span class="muted">RAM</span></div>
+        </div>
+
+        <div class="cta-row">
+          <button class="btn btn-primary" onclick="document.getElementById('purchase').scrollIntoView({behavior:'smooth'})">Pre-order Now</button>
+          <button class="btn btn-outline" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">View Specs</button>
+        </div>
+
+        <div id="features" class="features" style="margin-top:20px">
+          <div class="feature">
+            <div class="icon">📸</div>
+            <div>
+              <h4>Pro Camera System</h4>
+              <p>Multi-lens array with optical zoom, Night HDR, and 8K video capture for studio-quality photos.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="icon">🔋</div>
+            <div>
+              <h4>All-day Battery</h4>
+              <p>Adaptive battery tech and 65W fast charge keeps you going. Power for days with smart battery modes.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="icon">🎨</div>
+            <div>
+              <h4>Elegant Design</h4>
+              <p>Ultra-slim glass and metal frame, available in three glossy finishes with anti-fingerprint coating.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="icon">⚡</div>
+            <div>
+              <h4>Blazing Performance</h4>
+              <p>Latest-gen processor, up to 12 GB RAM and super-fast UFS storage for seamless multitasking and gaming.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-right">
+        <div class="phone-card" aria-hidden="true">
+          <div class="phone-img" role="img" aria-label="Galaxy X25 mockup"></div>
+        </div>
+        <div style="margin-top:12px;font-size:13px;color:var(--muted)">Choose color: <strong style="color:white">Stellar Violet</strong> · Storage: <strong style="color:white">256 GB</strong></div>
+      </div>
+    </section>
+
+    <section style="display:grid;grid-template-columns:1fr 380px;gap:18px;margin-top:18px;align-items:start">
+      <div>
+        <h3 style="margin:0 0 8px">What people are saying</h3>
+        <div id="reviews" class="testimonials">
+          <div class="card testimonial">
+            <strong>Priya R.</strong>
+            <div class="muted" style="font-size:13px">Verified buyer</div>
+            <p>"The camera is phenomenal — low light photos look like they were shot on a DSLR. Battery lasts me two days with heavy use."</p>
+          </div>
+          <div class="card testimonial">
+            <strong>Arjun M.</strong>
+            <div class="muted" style="font-size:13px">Tech Reviewer</div>
+            <p>"Smooth animations, zero stutter in games. This phone feels premium and looks gorgeous."</p>
+          </div>
+        </div>
+
+        <div style="margin-top:14px;display:flex;gap:12px;align-items:center">
+          <img alt="star" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><text y='14' font-size='14'>⭐️</text></svg>"/>
+          <div class="muted">Rated 4.8/5 from 10,492 reviews</div>
+        </div>
+
+      </div>
+
+      <aside>
+        <h3 style="margin:0 0 6px">Limited-time Pricing</h3>
+        <div id="pricing" class="pricing">
+          <div class="price-card">
+            <div class="small">Base Model</div>
+            <div class="price">₹49,999</div>
+            <div class="muted" style="margin:8px 0">256 GB • 12 GB RAM</div>
+            <button class="btn btn-primary" style="width:100%" onclick="document.getElementById('purchase').scrollIntoView({behavior:'smooth'})">Buy Now</button>
+          </div>
+
+          <div class="price-card">
+            <div class="small">Pro Model</div>
+            <div class="price">₹59,999</div>
+            <div class="muted" style="margin:8px 0">512 GB • 12 GB RAM</div>
+            <button class="btn btn-primary" style="width:100%" onclick="openCheckout()">Pre-order Pro</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="purchase" style="margin-top:22px">
+      <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <h3 style="margin:0 0 6px">Reserve your Galaxy X25</h3>
+          <p class="muted" style="margin:0 0 10px">Secure your unit with a small deposit and get exclusive accessories bundled.</p>
+
+          <form onsubmit="event.preventDefault();alert('Thank you! We received your pre-order request.');" style="display:grid;gap:10px;max-width:520px">
+            <input type="text" placeholder="Full name" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:inherit">
+            <input type="email" placeholder="Email address" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:inherit">
+            <select required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:inherit">
+              <option value="">Choose model</option>
+              <option>Base — 256 GB</option>
+              <option>Pro — 512 GB</option>
+            </select>
+            <div style="display:flex;gap:10px">
+              <button class="btn btn-primary" type="submit">Reserve with ₹2,999</button>
+              <button class="btn btn-outline" type="button" onclick="window.location.href='#pricing'">View plans</button>
+            </div>
+          </form>
+        </div>
+        <div style="min-width:220px;max-width:340px">
+          <div class="card" style="padding:14px">
+            <strong>What's included</strong>
+            <ul class="muted" style="margin:8px 0 0;padding-left:18px">
+              <li>Galaxy X25 handset</li>
+              <li>65W fast charger</li>
+              <li>Silicone case & tempered glass</li>
+              <li>6-month warranty + 1 year screen protection (pre-order exclusive)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Galaxy X25</strong>
+        <div class="muted" style="font-size:13px">Sales: sales@gx25.example • Support: support@gx25.example</div>
+      </div>
+      <div class="socials" aria-hidden="true">
+        <a href="#">🔗</a>
+        <a href="#">🐦</a>
+        <a href="#">📘</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    function openCheckout(){
+      alert('Opening secure checkout — this is a demo.');
+    }
+  </script>
+</body>
+</html>
